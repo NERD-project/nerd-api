@@ -1,0 +1,1207 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://nerd.eurecom.fr/ontology#> .
+@prefix extractiv: <http://wiki.extractiv.com/w/page/29179775/Entity-Extraction#> .
+@prefix nerd: <http://nerd.eurecom.fr/ontology#> .
+@prefix saplo: <http://developer.saplo.com/method/text-tags#> .
+@prefix alchemyapi: <http://www.alchemyapi.com/api/entity/types.html#> .
+@prefix zemanta: <http://developer.zemanta.com/docs/entity_type/> .
+@prefix opencalais: <http://www.opencalais.com/documentation/calais-web-service-api/api-metadata/entity-index-and-definitions#> .
+@prefix wikimeta: <http://www.wikimeta.com#> .
+@prefix dbpedia: <http://dbpedia.org/ontology/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix semitags: <http://ner2.lmcloud.vse.cz/SemiTags/app/static/types#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix yahoo: <http://developer.yahoo.com/search/content/V2/contentAnalysis.html#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@base <http://nerd.eurecom.fr/ontology> .
+
+<http://nerd.eurecom.fr/ontology> rdf:type owl:Ontology ;
+                                  
+                                  owl:imports <http://www.wikimeta.com> ,
+                                              dbpedia: ,
+                                              <http://developer.saplo.com/method/text-tags> ,
+                                              <http://developer.yahoo.com/search/content/V2/contentAnalysis.html> ,
+                                              zemanta: ,
+                                              <http://ner2.lmcloud.vse.cz/SemiTags/app/static/types> ,
+                                              <http://wiki.extractiv.com/w/page/29179775/Entity-Extraction> ,
+                                              <http://www.alchemyapi.com/api/entity/types.html> ,
+                                              <http://www.opencalais.com/documentation/calais-web-service-api/api-metadata/entity-index-and-definitions> .
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://dbpedia.org/ontology/Album
+
+dbpedia:Album rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/Animal
+
+dbpedia:Animal rdf:type owl:Class ;
+               
+               owl:equivalentClass :Animal .
+
+
+
+###  http://dbpedia.org/ontology/Automobile
+
+dbpedia:Automobile rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/Book
+
+dbpedia:Book rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/Drug
+
+dbpedia:Drug rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/Film
+
+dbpedia:Film rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/Holiday
+
+dbpedia:Holiday rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/Magazine
+
+dbpedia:Magazine rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/MilitaryConflict
+
+dbpedia:MilitaryConflict rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/Newspaper
+
+dbpedia:Newspaper rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/Organisation
+
+dbpedia:Organisation rdf:type owl:Class ;
+                     
+                     owl:equivalentClass :Organization .
+
+
+
+###  http://dbpedia.org/ontology/Person
+
+dbpedia:Person rdf:type owl:Class ;
+               
+               owl:equivalentClass :Person .
+
+
+
+###  http://dbpedia.org/ontology/PersonFunction
+
+dbpedia:PersonFunction rdf:type owl:Class ;
+                       
+                       owl:equivalentClass :Function .
+
+
+
+###  http://dbpedia.org/ontology/Place
+
+dbpedia:Place rdf:type owl:Class ;
+              
+              owl:equivalentClass :Location .
+
+
+
+###  http://dbpedia.org/ontology/PoliticalParty
+
+dbpedia:PoliticalParty rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf dbpedia:PoliticalParty .
+
+
+
+###  http://dbpedia.org/ontology/ProgrammingLanguage
+
+dbpedia:ProgrammingLanguage rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/Software
+
+dbpedia:Software rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/Song
+
+dbpedia:Song rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/Spacecraft
+
+dbpedia:Spacecraft rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/SportsEvent
+
+dbpedia:SportsEvent rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/VideoGame
+
+dbpedia:VideoGame rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/Weapon
+
+dbpedia:Weapon rdf:type owl:Class .
+
+
+
+###  http://dbpedia.org/ontology/Website
+
+dbpedia:Website rdf:type owl:Class .
+
+
+
+###  http://developer.saplo.com/method/text-tags#Location
+
+saplo:Location owl:equivalentClass :Location .
+
+
+
+###  http://developer.saplo.com/method/text-tags#Organization
+
+saplo:Organization owl:equivalentClass :Organization .
+
+
+
+###  http://developer.saplo.com/method/text-tags#Person
+
+saplo:Person owl:equivalentClass :Person .
+
+
+
+###  http://developer.yahoo.com/search/content/V2/contentAnalysis.html#location
+
+yahoo:location owl:equivalentClass :Location .
+
+
+
+###  http://developer.yahoo.com/search/content/V2/contentAnalysis.html#organization
+
+yahoo:organization owl:equivalentClass :Organization .
+
+
+
+###  http://developer.yahoo.com/search/content/V2/contentAnalysis.html#person
+
+yahoo:person owl:equivalentClass :Person .
+
+
+
+###  http://developer.yahoo.com/search/content/V2/contentAnalysis.html#place
+
+yahoo:place owl:equivalentClass :Location .
+
+
+
+###  http://developer.yahoo.com/search/content/V2/contentAnalysis.html#product
+
+yahoo:product owl:equivalentClass :Product .
+
+
+
+###  http://developer.zemanta.com/docs/entity_type/consumer_product
+
+zemanta:consumer_product owl:equivalentClass :Product .
+
+
+
+###  http://developer.zemanta.com/docs/entity_type/location
+
+zemanta:location owl:equivalentClass :Location .
+
+
+
+###  http://developer.zemanta.com/docs/entity_type/organization
+
+zemanta:organization owl:equivalentClass :Organization .
+
+
+
+###  http://developer.zemanta.com/docs/entity_type/person
+
+zemanta:person owl:equivalentClass :Person .
+
+
+
+###  http://developer.zemanta.com/docs/entity_type/time
+
+zemanta:time owl:equivalentClass :Time .
+
+
+
+###  http://ner2.lmcloud.vse.cz/SemiTags/app/static/types#location
+
+semitags:location owl:equivalentClass :Location .
+
+
+
+###  http://ner2.lmcloud.vse.cz/SemiTags/app/static/types#organization
+
+semitags:organization owl:equivalentClass :Organization .
+
+
+
+###  http://ner2.lmcloud.vse.cz/SemiTags/app/static/types#person
+
+semitags:person owl:equivalentClass :Person .
+
+
+
+###  http://nerd.eurecom.fr/ontology#AdministrativeRegion
+
+:AdministrativeRegion rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf :Location ,
+                                      alchemyapi:AdministrativeDivision ,
+                                      alchemyapi:GovernmentalJurisdiction .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Aircraft
+
+:Aircraft rdf:type owl:Class ;
+          
+          rdfs:subClassOf :Product ,
+                          extractiv:AIRCRAFT .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Airline
+
+:Airline rdf:type owl:Class ;
+         
+         rdfs:subClassOf :Organization ,
+                         extractiv:AIRLINE .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Airport
+
+:Airport rdf:type owl:Class ;
+         
+         rdfs:subClassOf :Location ,
+                         extractiv:AIRPORT ,
+                         alchemyapi:Airport .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Album
+
+:Album rdf:type owl:Class ;
+       
+       rdfs:subClassOf dbpedia:Album ,
+                       zemanta:album ,
+                       :Product .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Ambassador
+
+:Ambassador rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Person ,
+                            extractiv:AMBASSADOR .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Amount
+
+:Amount rdf:type owl:Class ;
+        
+        owl:equivalentClass wikimeta:AMOUNT ;
+        
+        rdfs:subClassOf :Thing .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Animal
+
+:Animal rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Thing .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Architect
+
+:Architect rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Person .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Artist
+
+:Artist rdf:type owl:Class ;
+        
+        rdfs:subClassOf zemanta:artist ,
+                        :Person .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Astronaut
+
+:Astronaut rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Person .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Athlete
+
+:Athlete rdf:type owl:Class ;
+         
+         rdfs:subClassOf :Person ,
+                         extractiv:ATHLETE .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Automobile
+
+:Automobile rdf:type owl:Class ;
+            
+            rdfs:subClassOf dbpedia:Automobile ,
+                            :Product ,
+                            extractiv:AUTOMOBILE_MODEL ,
+                            alchemyapi:Automobile .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Band
+
+:Band rdf:type owl:Class ;
+      
+      rdfs:subClassOf :Organization ,
+                      extractiv:BAND ,
+                      alchemyapi:MusicGroup ,
+                      opencalais:MusicGroup .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Bird
+
+:Bird rdf:type owl:Class ;
+      
+      rdfs:subClassOf :Animal ,
+                      extractiv:BIRD .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Book
+
+:Book rdf:type owl:Class ;
+      
+      rdfs:subClassOf dbpedia:Book ,
+                      yahoo:book ,
+                      zemanta:book ,
+                      :Product .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Bridge
+
+:Bridge rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Location ,
+                        extractiv:BRIDGE ,
+                        alchemyapi:Bridge .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Broadcast
+
+:Broadcast rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Organization .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Canal
+
+:Canal rdf:type owl:Class ;
+       
+       rdfs:subClassOf :Location ,
+                       extractiv:CANAL .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Celebrity
+
+:Celebrity rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Person .
+
+
+
+###  http://nerd.eurecom.fr/ontology#City
+
+:City rdf:type owl:Class ;
+      
+      rdfs:subClassOf :Location ,
+                      extractiv:CITY ,
+                      alchemyapi:City .
+
+
+
+###  http://nerd.eurecom.fr/ontology#ComicsCharacter
+
+:ComicsCharacter rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Person .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Company
+
+:Company rdf:type owl:Class ;
+         
+         rdfs:subClassOf yahoo:company_name ,
+                         zemanta:company ,
+                         :Organization ,
+                         opencalais:Company .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Continent
+
+:Continent rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Location ,
+                           extractiv:CONTINENT ,
+                           alchemyapi:Continent ,
+                           opencalais:Continent .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Country
+
+:Country rdf:type owl:Class ;
+         
+         rdfs:subClassOf :Location ,
+                         extractiv:COUNTRY ,
+                         alchemyapi:Country ,
+                         opencalais:Country .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Criminal
+
+:Criminal rdf:type owl:Class ;
+          
+          rdfs:subClassOf :Person ,
+                          extractiv:CRIMINAL .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Drug
+
+:Drug rdf:type owl:Class ;
+      
+      rdfs:subClassOf dbpedia:Drug ,
+                      :Product ,
+                      extractiv:DRUG ,
+                      alchemyapi:Drug .
+
+
+
+###  http://nerd.eurecom.fr/ontology#EducationalInstitution
+
+:EducationalInstitution rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf zemanta:educational_institution ,
+                                        :Organization ,
+                                        extractiv:EDUCATIONAL_ORG .
+
+
+
+###  http://nerd.eurecom.fr/ontology#EmailAddress
+
+:EmailAddress rdf:type owl:Class ;
+              
+              rdfs:subClassOf :Product ,
+                              extractiv:EMAIL .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Event
+
+:Event rdf:type owl:Class ;
+       
+       rdfs:subClassOf zemanta:event ,
+                       :Thing .
+
+
+
+###  http://nerd.eurecom.fr/ontology#FictionalCharacter
+
+:FictionalCharacter rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf :Person .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Function
+
+:Function rdf:type owl:Class ;
+          
+          owl:equivalentClass opencalais:Position ,
+                              wikimeta:FONC ;
+          
+          rdfs:subClassOf :Thing .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Holiday
+
+:Holiday rdf:type owl:Class ;
+         
+         rdfs:subClassOf dbpedia:Holiday ,
+                         yahoo:holiday ,
+                         :Time ,
+                         alchemyapi:Holiday ,
+                         opencalais:Holiday .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Hospital
+
+:Hospital rdf:type owl:Class ;
+          
+          rdfs:subClassOf :Location ,
+                          alchemyapi:Hospital .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Insect
+
+:Insect rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Animal ,
+                        extractiv:INSECT .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Island
+
+:Island rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Location ,
+                        extractiv:ISLAND ,
+                        alchemyapi:Island .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Lake
+
+:Lake rdf:type owl:Class ;
+      
+      rdfs:subClassOf :Location ,
+                      extractiv:LAKE ,
+                      alchemyapi:Lake .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Legislature
+
+:Legislature rdf:type owl:Class ;
+             
+             rdfs:subClassOf :Organization .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Lighthouse
+
+:Lighthouse rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Location ,
+                            alchemyapi:Lighthouse .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Location
+
+:Location rdf:type owl:Class ;
+          
+          owl:equivalentClass extractiv:LOCATION ,
+                              wikimeta:LOC ;
+          
+          rdfs:subClassOf :Thing .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Magazine
+
+:Magazine rdf:type owl:Class ;
+          
+          rdfs:subClassOf dbpedia:Magazine ,
+                          :Product ,
+                          extractiv:MAGAZINE ,
+                          alchemyapi:Magazine .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Mayor
+
+:Mayor rdf:type owl:Class ;
+       
+       rdfs:subClassOf :Person .
+
+
+
+###  http://nerd.eurecom.fr/ontology#MilitaryConflict
+
+:MilitaryConflict rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf dbpedia:MilitaryConflict ,
+                                  :Event ,
+                                  extractiv:CONFLICT .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Mountain
+
+:Mountain rdf:type owl:Class ;
+          
+          rdfs:subClassOf :Location ,
+                          extractiv:MOUNTAIN ,
+                          alchemyapi:Mountain .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Movie
+
+:Movie rdf:type owl:Class ;
+       
+       rdfs:subClassOf dbpedia:Film ,
+                       yahoo:movie_name ,
+                       zemanta:film ,
+                       :Product ,
+                       extractiv:MOVIE ,
+                       alchemyapi:Movie ,
+                       opencalais:Movie .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Museum
+
+:Museum rdf:type owl:Class ;
+        
+        rdfs:subClassOf zemanta:museum ,
+                        :Location .
+
+
+
+###  http://nerd.eurecom.fr/ontology#MusicalArtist
+
+:MusicalArtist rdf:type owl:Class ;
+               
+               rdfs:subClassOf yahoo:music_artist ,
+                               :Person .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Newspaper
+
+:Newspaper rdf:type owl:Class ;
+           
+           rdfs:subClassOf dbpedia:Newspaper ,
+                           zemanta:newspaper ,
+                           :Product ,
+                           alchemyapi:Newspaper .
+
+
+
+###  http://nerd.eurecom.fr/ontology#NonProfitOrganisation
+
+:NonProfitOrganisation rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :Organization .
+
+
+
+###  http://nerd.eurecom.fr/ontology#OperatingSystem
+
+:OperatingSystem rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf zemanta:operating_system ,
+                                 :Product ,
+                                 extractiv:OPERATING_SYSTEM ,
+                                 alchemyapi:OperatingSystem ,
+                                 opencalais:OperatingSystem .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Organization
+
+:Organization rdf:type owl:Class ;
+              
+              owl:equivalentClass extractiv:ORGANIZATION ,
+                                  alchemyapi:Organization ,
+                                  opencalais:Organization ,
+                                  wikimeta:ORG ;
+              
+              rdfs:subClassOf :Thing .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Park
+
+:Park rdf:type owl:Class ;
+      
+      rdfs:subClassOf :Location ,
+                      alchemyapi:Park .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Person
+
+:Person rdf:type owl:Class ;
+        
+        owl:equivalentClass extractiv:PERSON ,
+                            alchemyapi:Person ,
+                            opencalais:Person ,
+                            wikimeta:PERS ;
+        
+        rdfs:subClassOf :Thing .
+
+
+
+###  http://nerd.eurecom.fr/ontology#PhoneNumber
+
+:PhoneNumber rdf:type owl:Class ;
+             
+             rdfs:subClassOf :Product ,
+                             extractiv:PHONE_NUMBER ,
+                             opencalais:PhoneNumber .
+
+
+
+###  http://nerd.eurecom.fr/ontology#PoliticalEvent
+
+:PoliticalEvent rdf:type owl:Class ;
+                
+                rdfs:subClassOf zemanta:political_party ,
+                                :Event ,
+                                alchemyapi:PoliticalParty ,
+                                opencalais:PoliticalEvent .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Politician
+
+:Politician rdf:type owl:Class ;
+            
+            rdfs:subClassOf zemanta:politician ,
+                            :Person .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Product
+
+:Product rdf:type owl:Class ;
+         
+         owl:equivalentClass <http://schema.org/Product> ,
+                             opencalais:Product ,
+                             wikimeta:PROD ;
+         
+         rdfs:subClassOf :Thing .
+
+
+
+###  http://nerd.eurecom.fr/ontology#ProgrammingLanguage
+
+:ProgrammingLanguage rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf dbpedia:ProgrammingLanguage ,
+                                     zemanta:programming_language ,
+                                     :Product ,
+                                     opencalais:ProgrammingLanguage .
+
+
+
+###  http://nerd.eurecom.fr/ontology#RadioProgram
+
+:RadioProgram rdf:type owl:Class ;
+              
+              rdfs:subClassOf zemanta:radio_program ,
+                              :Product ,
+                              alchemyapi:RadioProgram ,
+                              opencalais:RadioProgram .
+
+
+
+###  http://nerd.eurecom.fr/ontology#RadioStation
+
+:RadioStation rdf:type owl:Class ;
+              
+              rdfs:subClassOf :Organization ,
+                              extractiv:RADIO_STATION ,
+                              alchemyapi:RadioStation ,
+                              opencalais:RadioStation .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Restaurant
+
+:Restaurant rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Location ,
+                            alchemyapi:Restaurant .
+
+
+
+###  http://nerd.eurecom.fr/ontology#River
+
+:River rdf:type owl:Class ;
+       
+       rdfs:subClassOf :Location ,
+                       extractiv:RIVER ,
+                       alchemyapi:River .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Road
+
+:Road rdf:type owl:Class ;
+      
+      rdfs:subClassOf :Location ,
+                      extractiv:ROAD .
+
+
+
+###  http://nerd.eurecom.fr/ontology#SchoolNewspaper
+
+:SchoolNewspaper rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Product ,
+                                 alchemyapi:SchoolNewspaper .
+
+
+
+###  http://nerd.eurecom.fr/ontology#ShoppingMall
+
+:ShoppingMall rdf:type owl:Class ;
+              
+              rdfs:subClassOf :Location ,
+                              alchemyapi:ShoppingMall .
+
+
+
+###  http://nerd.eurecom.fr/ontology#SoccerClub
+
+:SoccerClub rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Organization .
+
+
+
+###  http://nerd.eurecom.fr/ontology#SoccerPlayer
+
+:SoccerPlayer rdf:type owl:Class ;
+              
+              rdfs:subClassOf :Person .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Software
+
+:Software rdf:type owl:Class ;
+          
+          rdfs:subClassOf dbpedia:Software ,
+                          zemanta:software ,
+                          :Product ,
+                          extractiv:SOFTWARE .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Song
+
+:Song rdf:type owl:Class ;
+      
+      rdfs:subClassOf dbpedia:Song ,
+                      zemanta:track ,
+                      :Product .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Spacecraft
+
+:Spacecraft rdf:type owl:Class ;
+            
+            rdfs:subClassOf dbpedia:Spacecraft ,
+                            :Product ,
+                            extractiv:SPACECRAFT .
+
+
+
+###  http://nerd.eurecom.fr/ontology#SportEvent
+
+:SportEvent rdf:type owl:Class ;
+            
+            rdfs:subClassOf dbpedia:SportsEvent ,
+                            :Event ,
+                            opencalais:SportsEvent .
+
+
+
+###  http://nerd.eurecom.fr/ontology#SportsLeague
+
+:SportsLeague rdf:type owl:Class ;
+              
+              rdfs:subClassOf :Organization ,
+                              extractiv:SPORTS_LEAGUE ,
+                              opencalais:SportsLeague .
+
+
+
+###  http://nerd.eurecom.fr/ontology#SportsTeam
+
+:SportsTeam rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Organization ,
+                            extractiv:SPORTS_TEAM .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Stadium
+
+:Stadium rdf:type owl:Class ;
+         
+         rdfs:subClassOf :Location ,
+                         alchemyapi:Stadium .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Station
+
+:Station rdf:type owl:Class ;
+         
+         rdfs:subClassOf :Location ,
+                         alchemyapi:Station .
+
+
+
+###  http://nerd.eurecom.fr/ontology#TVStation
+
+:TVStation rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Organization ,
+                           extractiv:TV_NETWORK ,
+                           opencalais:TVStation .
+
+
+
+###  http://nerd.eurecom.fr/ontology#TennisPlayer
+
+:TennisPlayer rdf:type owl:Class ;
+              
+              rdfs:subClassOf :Person .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Thing
+
+:Thing rdf:type owl:Class .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Time
+
+:Time rdf:type owl:Class ;
+      
+      owl:equivalentClass extractiv:TIME ,
+                          wikimeta:TIME ;
+      
+      rdfs:subClassOf :Thing .
+
+
+
+###  http://nerd.eurecom.fr/ontology#URL
+
+:URL rdf:type owl:Class ;
+     
+     rdfs:subClassOf saplo:URL ,
+                     :Product ,
+                     extractiv:URL ,
+                     opencalais:URL .
+
+
+
+###  http://nerd.eurecom.fr/ontology#University
+
+:University rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Organization ,
+                            extractiv:UNIVERSITY .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Valley
+
+:Valley rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Location ,
+                        extractiv:VALLEY .
+
+
+
+###  http://nerd.eurecom.fr/ontology#VideoGame
+
+:VideoGame rdf:type owl:Class ;
+           
+           rdfs:subClassOf dbpedia:VideoGame ,
+                           zemanta:computer_videogame ,
+                           :Product ,
+                           extractiv:VIDEO_GAME .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Weapon
+
+:Weapon rdf:type owl:Class ;
+        
+        rdfs:subClassOf dbpedia:Weapon ,
+                        :Product ,
+                        extractiv:WEAPON .
+
+
+
+###  http://nerd.eurecom.fr/ontology#Website
+
+:Website rdf:type owl:Class ;
+         
+         rdfs:subClassOf dbpedia:Website ,
+                         zemanta:website ,
+                         :Product .
+
+
+
+###  http://schema.org/Product
+
+<http://schema.org/Product> rdf:type owl:Class .
+
+
+
+###  http://wiki.extractiv.com/w/page/29179775/Entity-Extraction#LOCATION
+
+
+
+
+###  http://wiki.extractiv.com/w/page/29179775/Entity-Extraction#ORGANIZATION
+
+
+
+
+###  http://wiki.extractiv.com/w/page/29179775/Entity-Extraction#PERSON
+
+
+
+
+###  http://wiki.extractiv.com/w/page/29179775/Entity-Extraction#TIME
+
+
+
+
+###  http://www.alchemyapi.com/api/entity/types.html#Organization
+
+
+
+
+###  http://www.alchemyapi.com/api/entity/types.html#Person
+
+
+
+
+###  http://www.opencalais.com/documentation/calais-web-service-api/api-metadata/entity-index-and-definitions#Organization
+
+
+
+
+###  http://www.opencalais.com/documentation/calais-web-service-api/api-metadata/entity-index-and-definitions#Person
+
+
+
+
+###  http://www.opencalais.com/documentation/calais-web-service-api/api-metadata/entity-index-and-definitions#Position
+
+
+
+
+###  http://www.opencalais.com/documentation/calais-web-service-api/api-metadata/entity-index-and-definitions#Product
+
+
+
+
+###  http://www.wikimeta.com#AMOUNT
+
+
+
+
+###  http://www.wikimeta.com#FONC
+
+
+
+
+###  http://www.wikimeta.com#LOC
+
+
+
+
+###  http://www.wikimeta.com#ORG
+
+
+
+
+###  http://www.wikimeta.com#PERS
+
+
+
+
+###  http://www.wikimeta.com#PROD
+
+
+
+
+###  http://www.wikimeta.com#TIME
+
+
+
+
+
+###  Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net
+
