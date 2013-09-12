@@ -1,6 +1,6 @@
 NERD 
 ====
-The Named Entity Recognition and Disambiguation framework processes textual resources for extracting named entities linked to Web resources.
+The Named Entity Recognition and Disambiguation framework processes textual documents for extracting named entities linked to Web resources.
 
 Demonstration
 ---
@@ -26,4 +26,4 @@ Licensed under both the CeCILL-B and the Apache License, Version 2.0 (the "Licen
 
 Documentation
 ---
-More documentation is available from the [NERD public instance] http://nerd.eurecom.fr/documentation.
+More documentation is available from the [NERD documentation] (http://nerd.eurecom.fr/documentation).
