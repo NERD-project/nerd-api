@@ -38,8 +38,6 @@ public class THDClient implements IClient {
 	    throws ClientException 
 	    {
 	    	
-
-	    	System.out.println("Key: "+key);
 	    	
 	        LogFactory.logger.info(SOURCE + " is going to extract entities from a document");
 	        String json = post(key, document.getText(), document.getLanguage());
@@ -164,13 +162,7 @@ public class THDClient implements IClient {
 	    throws ClientException 
 	    {
 	        
-	    	
 
-
-
-
-	        
-	        
 	        //curl -v "http://ner.vse.cz/thd/api/v1/extraction?apikey=a515172367fc402fa38685d0a3482a7d&format=json&provenance=thd&priority_entity_linking=true&entity_type=all" -d "The Charles Bridge is a famous historic bridge that crosses the Vltava river in Prague, Czech Republic." -H "Accept: application/xml"
 	        Client client = ClientBuilder.newClient();     
 	       
@@ -204,7 +196,6 @@ public class THDClient implements IClient {
 	        
 	        
 	        String json = response.readEntity(String.class);
-	        System.out.println("ESTOOO " + json);
 	        return json;
 
 	    }
