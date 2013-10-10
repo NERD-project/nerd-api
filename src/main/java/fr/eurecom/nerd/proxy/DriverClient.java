@@ -179,6 +179,9 @@ public class DriverClient {
         case TEXTRAZOR:
             result = new TextRazorClient();
             break;
+        case THD:
+            result = new THDClient();
+            break;
         case WIKIMETA:
             result = new WikimetaClient();
             break;    
