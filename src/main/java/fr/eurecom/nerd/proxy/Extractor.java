@@ -59,6 +59,9 @@ public class Extractor {
         else if (extractor.equals("textrazor"))
             return ExtractorType.TEXTRAZOR;
         
+        else if(extractor.equals("thd"))
+            return ExtractorType.THD;
+        
         else if (extractor.equals("wikimeta"))
             return ExtractorType.WIKIMETA;
         
@@ -96,6 +99,8 @@ public class Extractor {
             return "semitags";
         case TEXTRAZOR:
             return "textrazor";
+        case THD:
+            return "thd";
         case WIKIMETA: 
             return "wikimeta";
         case YAHOO:
