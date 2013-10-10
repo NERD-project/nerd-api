@@ -52,6 +52,8 @@ INSERT INTO `tool`(name,uri) VALUES
 ('wikimeta','http://www.wikimeta.org'),
 ('yahoo','http://developer.yahoo.com/search/content/V2/contentAnalysis.html'),
 ('zemanta','http://www.zemanta.com'),
+('thd','https://ner.vse.cz/thd/'),
+('textrazor','http://api.textrazor.com'),
 ('combined','http://nerd.eurecom.fr');
 
 
