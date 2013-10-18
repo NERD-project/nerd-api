@@ -100,7 +100,8 @@ public class Mapper {
         String normalizedType = type.toLowerCase();
         String normalizedDataset = ( extractor.equals("dbspotlight") || 
                                      extractor.equals("lupedia") ||
-                                     extractor.equals("textrazor")
+                                     extractor.equals("textrazor") ||
+                                     extractor.equals("thd")
                                    ) 
                                    ? "dbpedia" : extractor;
 
