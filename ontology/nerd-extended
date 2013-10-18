@@ -17,7 +17,7 @@
 #
 #
 # taxonomy aligned: alchemyapi,
-#                   dbpedia (for DBpedia Spotlight & Lupedia),
+#                   dbpedia (for DBpedia Spotlight & Lupedia & TextRazor & THD),
 #                   evri,
 #                   extractiv,
 #                   opencalais,
