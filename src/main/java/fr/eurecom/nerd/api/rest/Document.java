@@ -48,10 +48,10 @@ import org.json.JSONObject;
 import com.google.gson.Gson;
 
 import fr.eurecom.nerd.api.authentication.NerdPrincipal;
-import fr.eurecom.nerd.db.SQL;
-import fr.eurecom.nerd.db.table.TDocument;
-import fr.eurecom.nerd.exceptions.LanguageException;
-import fr.eurecom.nerd.logging.LogFactory;
+import fr.eurecom.nerd.core.db.SQL;
+import fr.eurecom.nerd.core.db.table.TDocument;
+import fr.eurecom.nerd.core.exceptions.LanguageException;
+import fr.eurecom.nerd.core.logging.LogFactory;
 
 @Path("/document")
 public class Document {

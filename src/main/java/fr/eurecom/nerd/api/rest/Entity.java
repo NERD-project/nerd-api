@@ -46,12 +46,12 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 
 import fr.eurecom.nerd.api.authentication.NerdPrincipal;
-import fr.eurecom.nerd.db.SQL;
-import fr.eurecom.nerd.db.table.DocumentType;
-import fr.eurecom.nerd.db.table.TEntity;
-import fr.eurecom.nerd.gson.SRTAdapter;
-import fr.eurecom.nerd.gson.TextAdapter;
-import fr.eurecom.nerd.logging.LogFactory;
+import fr.eurecom.nerd.core.db.SQL;
+import fr.eurecom.nerd.core.db.table.DocumentType;
+import fr.eurecom.nerd.core.db.table.TEntity;
+import fr.eurecom.nerd.core.gson.SRTAdapter;
+import fr.eurecom.nerd.core.gson.TextAdapter;
+import fr.eurecom.nerd.core.logging.LogFactory;
 
 @Path("/entity")
 @RolesAllowed({"user"})

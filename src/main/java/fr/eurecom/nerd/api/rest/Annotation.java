@@ -43,14 +43,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import fr.eurecom.nerd.api.authentication.NerdPrincipal;
-import fr.eurecom.nerd.exceptions.LanguageException;
-import fr.eurecom.nerd.exceptions.NoContentException;
-import fr.eurecom.nerd.exceptions.QuotaException;
-import fr.eurecom.nerd.exceptions.RouterException;
-import fr.eurecom.nerd.exceptions.TimeOutException;
-import fr.eurecom.nerd.exceptions.TypeExpection;
-import fr.eurecom.nerd.logging.LogFactory;
-import fr.eurecom.nerd.proxy.Dispatcher;
+import fr.eurecom.nerd.core.exceptions.LanguageException;
+import fr.eurecom.nerd.core.exceptions.NoContentException;
+import fr.eurecom.nerd.core.exceptions.QuotaException;
+import fr.eurecom.nerd.core.exceptions.RouterException;
+import fr.eurecom.nerd.core.exceptions.TimeOutException;
+import fr.eurecom.nerd.core.exceptions.TypeExpection;
+import fr.eurecom.nerd.core.logging.LogFactory;
+import fr.eurecom.nerd.core.proxy.Dispatcher;
 
 @Path("/annotation")
 @RolesAllowed("user")

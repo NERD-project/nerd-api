@@ -32,7 +32,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import fr.eurecom.nerd.db.MySQL;
+import fr.eurecom.nerd.core.db.MySQL;
 
 public class NerdPrincipals {
     private static MySQL database = new MySQL();
