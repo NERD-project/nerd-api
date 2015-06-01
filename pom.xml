@@ -191,7 +191,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>fr.eurecom.nerd.Server</mainClass>
+                            <mainClass>fr.eurecom.nerd.api.Server</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
