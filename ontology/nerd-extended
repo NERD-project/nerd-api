@@ -268,7 +268,7 @@ alchemyapi:Station;Station
 dbpedia:Station;Station
 ##################################  Location.Valley
 dbpedia:Valley;Valley
-extractiv:VALLEY;Location
+extractiv:VALLEY;Valley
 ################################ Organization ##################################
 alchemyapi:Organization;Organization
 alchemyapi:ArchitectureFirm;Organization
