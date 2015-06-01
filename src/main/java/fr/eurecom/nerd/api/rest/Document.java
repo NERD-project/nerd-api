@@ -26,6 +26,7 @@ package fr.eurecom.nerd.api.rest;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.SQLException;
+import java.util.Properties;
 
 import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.FormParam;
@@ -47,6 +48,7 @@ import org.json.JSONObject;
 
 import com.google.gson.Gson;
 
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import fr.eurecom.nerd.api.authentication.NerdPrincipal;
 import fr.eurecom.nerd.core.db.SQL;
 import fr.eurecom.nerd.core.db.table.TDocument;
@@ -73,7 +75,13 @@ public class Document {
         
         ResponseBuilder response = null;
         JSONObject jo = new JSONObject(); 
-               
+
+        System.out.println("before");
+        Properties props = new Properties();
+        props.setProperty("annotators", "tokenize,ssplit,pos");
+        StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+        System.out.println("after");
+        
         try {          
             LogFactory.logger.info("user:" + user.getId() + " requires to store a resource");
            

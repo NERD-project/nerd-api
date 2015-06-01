@@ -71,7 +71,7 @@ public class Annotation {
 
         JSONObject jo = new JSONObject();
         URI uri=null;
-        
+               
         try {           
             LogFactory.logger.info("user=" + idUser + " requires to extract entities from the document=" + idDocument);
 

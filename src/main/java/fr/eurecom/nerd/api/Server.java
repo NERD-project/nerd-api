@@ -39,7 +39,7 @@ import fr.eurecom.nerd.api.authentication.AuthorizationFilter;
 public class Server {
     
     // Base URI the Grizzly HTTP server will listen on
-    public static final String BASE_URI = "http://localhost:8888/api/";
+    public static final String BASE_URI = "http://localhost:8889/api/";
     private static volatile Boolean running = true;
     
     public static HttpServer startServer() 

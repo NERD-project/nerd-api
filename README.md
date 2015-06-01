@@ -18,7 +18,9 @@ Configure your NERD server
 - Maven v3.x
 
 #### Deploy
-...
+mvn clean
+mvn test
+mvn exec:java
 
 Licenses
 ---
