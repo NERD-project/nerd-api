@@ -50,7 +50,12 @@ import fr.eurecom.nerd.core.srt.SRTMapper;
 
 public class THDClient implements IClient {
 	private static String SOURCE = Extractor.getName(ExtractorType.THD);
-	private static String ENDPOINT = "http://ner.vse.cz/thd/api/v1/extraction";
+	
+	//OLD API URL
+	//private static String ENDPOINT = "http://ner.vse.cz/thd/api/v1/extraction";
+	
+	//API 2.0
+	private static String ENDPOINT = "https://entityclassifier.eu/thd/api/v2/extraction";
 
     public List<TEntity> extract( TDocument document, 
                                   String key, 
@@ -197,6 +202,9 @@ public class THDClient implements IClient {
         target = target.queryParam("lang", language);
         target = target.queryParam("priority_entity_linking", "true");
         target = target.queryParam("entity_type", "ne");
+        target = target.queryParam("types_filter", "dbo");
+
+        
 
         Response response = target.request(MediaType.APPLICATION_JSON)
         							.post(Entity.entity(
