@@ -23,12 +23,18 @@
 
 package fr.eurecom.nerd.api.rest;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
+
+import org.apache.commons.io.IOUtils;
 
 import fr.eurecom.adel.okechallenge.OKE;
 
@@ -37,9 +43,19 @@ public class Adel {
               
     @POST
     @Consumes("application/x-turtle")
+    //@Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces("application/x-turtle")
-    public Response doPostJSON( String nif )             
+    //public Response doPost( String nif )             
+    public Response doPost( InputStream inputStream )
     {                    
+    	String nif = "";
+		try {
+			nif = IOUtils.toString(inputStream, "utf8");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+    	
         System.out.println(nif +"\n");
 
 //        String nif2 = "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n" +
@@ -63,6 +79,7 @@ public class Adel {
         
         return Response.status(Status.OK)
         				.header("Access-Control-Allow-Origin", "*")
+        				.header("Content-Type", "application/x-turtle")
                         .entity(OKE.run(nif) + "\n")
                         .build();
     }

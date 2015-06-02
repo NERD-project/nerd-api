@@ -25,6 +25,9 @@ package fr.eurecom.nerd.api;
 
 import java.io.IOException;
 import java.net.URI;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.ws.rs.Priorities;
 
@@ -32,6 +35,7 @@ import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.filter.LoggingFilter;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
+import org.glassfish.jersey.server.ServerProperties;
 import org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature;
 
 import fr.eurecom.nerd.api.authentication.AuthorizationFilter;
@@ -47,15 +51,23 @@ public class Server {
         // create a resource config that scans for JAX-RS resources and providers
         // in fr.eurecom.nerd package
         final ResourceConfig rc = new ResourceConfig().packages("fr.eurecom.nerd.api.rest");
-        rc.register(AuthorizationFilter.class, Priorities.AUTHENTICATION);
-        rc.register(RolesAllowedDynamicFeature.class);
+        //rc.register(AuthorizationFilter.class, Priorities.AUTHENTICATION);
+        //rc.register(RolesAllowedDynamicFeature.class);
         rc.register(LoggingFilter.class);
+        //rc.property(ServerProperties.TRACING, "ALL");
+        //rc.property(ServerProperties.TRACING_THRESHOLD, "VERBOSE");
         
         // create and start a new instance of grizzly http server
         // exposing the Jersey application at BASE_URI
         HttpServer server =  GrizzlyHttpServerFactory.
                              createHttpServer(URI.create(BASE_URI), rc);
-        
+                
+        Logger logger = Logger.getLogger("org.glassfish.grizzly.http.server.HttpHandler");
+        logger.setLevel(Level.FINE);
+        logger.setUseParentHandlers(false);
+        ConsoleHandler ch = new ConsoleHandler();
+        ch.setLevel(Level.ALL);
+        logger.addHandler(ch);
         
         return server;
     }
