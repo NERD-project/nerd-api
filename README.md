@@ -1,5 +1,6 @@
 NERD 
 ====
+
 The Named Entity Recognition and Disambiguation framework processes textual documents for extracting named entities linked to Web resources.
 
 Demonstration
