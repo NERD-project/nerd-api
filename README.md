@@ -20,6 +20,7 @@ Configure your NERD server
 
 #### Deploy
 mvn clean
+mvn initialize
 mvn test
 mvn exec:java
 
